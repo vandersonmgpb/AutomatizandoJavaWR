@@ -1,27 +1,40 @@
 package br.com.seleniumwebdriverjava.test;
 
 import static org.junit.Assert.*;
+
+import org.junit.BeforeClass;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 
+import br.com.seleniumwebdriverjava.pages.GooglePO;
 
-public class GoogleTest extends BaseTest{
-    
-    
+    public class GoogleTest extends BaseTest{
+        
+        private static GooglePO googlePage;
+        @BeforeClass
+        public static void prepararTestes(){
+            googlePage = new GooglePO(driver);
+        }
     
     @Test
-    public void devePesquisarNoGoogle(){
+    public void TC001_deveSerPossivelPesquisarNoGoogleOTextoBatataFrita(){
 
-        WebElement inputPesquisa = driver.findElement(By.name("q"));
-        inputPesquisa.sendKeys("Batata frita" + Keys.ENTER);
+        googlePage.pesquisar("Batata frita");
         
-        String resultado = driver.findElement(By.id("result-stats")).getText();
+        String resultado = googlePage.obterResutladoDaPesquisa();
         
         assertTrue(resultado, resultado.contains("Aproximadamente"));
-
-        driver.quit();
+        
+    }
+    
+    @Test
+    public void TC001_deveSerPossivelPesquisarNoGoogleOTextoNutella(){
+        
+        
+        googlePage.pesquisar("Nutella ");
+        
+        String resultado = googlePage.obterResutladoDaPesquisa();
+        
+        assertTrue(resultado, resultado.contains("resultados"));
 
     }
 }
