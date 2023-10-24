@@ -4,15 +4,19 @@ import static org.junit.Assert.*;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.openqa.selenium.WebElement;
 
 import br.com.seleniumwebdriverjava.pages.GooglePO;
 
     public class GoogleTest extends BaseTest{
         
         private static GooglePO googlePage;
+
         @BeforeClass
         public static void prepararTestes(){
+            driver.get("https://www.google.com/");
             googlePage = new GooglePO(driver);
+
         }
     
     @Test
@@ -29,7 +33,7 @@ import br.com.seleniumwebdriverjava.pages.GooglePO;
     @Test
     public void TC001_deveSerPossivelPesquisarNoGoogleOTextoNutella(){
         
-        
+        // input.clear();
         googlePage.pesquisar("Nutella ");
         
         String resultado = googlePage.obterResutladoDaPesquisa();
