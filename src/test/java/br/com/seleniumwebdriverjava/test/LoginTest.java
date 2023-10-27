@@ -10,12 +10,13 @@ import br.com.seleniumwebdriverjava.pages.LoginPO;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class LoginTest extends BaseTest{
+    
     private static LoginPO loginpage;
         
-        @BeforeClass
-        public static void prepararTestes(){
-            loginpage = new LoginPO(driver);
-        }
+    @BeforeClass
+    public static void prepararTestes(){
+        loginpage = new LoginPO(driver);
+    }
     
     @Test
     public void TC001_naoDeveLogarNoSistemaComEmailESenhaVazios(){
