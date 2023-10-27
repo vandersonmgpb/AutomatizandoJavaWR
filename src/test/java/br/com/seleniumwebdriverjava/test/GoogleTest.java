@@ -1,13 +1,14 @@
 package br.com.seleniumwebdriverjava.test;
 
 import static org.junit.Assert.*;
-
 import org.junit.BeforeClass;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
-import org.openqa.selenium.WebElement;
+import org.junit.runners.MethodSorters;
 
 import br.com.seleniumwebdriverjava.pages.GooglePO;
 
+    @FixMethodOrder(MethodSorters.NAME_ASCENDING)
     public class GoogleTest extends BaseTest{
         
         private static GooglePO googlePage;
