@@ -1,7 +1,6 @@
 package br.com.seleniumwebdriverjava.test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
@@ -30,6 +29,7 @@ public class ControleDeProdutosTest extends BaseTest{
     
     @Test
     public void TC001_deveAbrirModalParaCadastroAoClicarNoBotaoCriar(){
+        
         controlleProdutoPage.buttonAdicionar.click();
         // TODO: remover esse clique assim que o sistema for corrigido
         controlleProdutoPage.buttonAdicionar.click();
@@ -37,5 +37,24 @@ public class ControleDeProdutosTest extends BaseTest{
         String titulo = controlleProdutoPage.tituloModal.getText();
 
         assertEquals("Produto", titulo);
+
+        controlleProdutoPage.buttonSair.click();
+        controlleProdutoPage.buttonSair.click();
+
+    }
+    
+    @Test
+    public void TC002_naoDeveSerPossivelCadastrarUmProdutoSemPreencherTodosOsCampos(){
+        
+        controlleProdutoPage.buttonAdicionar.click();
+        controlleProdutoPage.buttonAdicionar.click();
+
+        controlleProdutoPage.cadastrarProduto("00001", "Martelo", 10, 59.9, "");
+
+        
+        // Aqui vamos capturar a mensagem de erro.
+        String mensagem = controlleProdutoPage.spanMensagem.getText();
+        
+        assertEquals("Todos os campos são obrigatórios para o cadastro!", mensagem);
     }
 }
