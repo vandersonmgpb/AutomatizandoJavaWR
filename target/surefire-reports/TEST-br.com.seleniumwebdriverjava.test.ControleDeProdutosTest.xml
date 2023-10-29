@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="br.com.seleniumwebdriverjava.test.GoogleTest" time="16.618" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="br.com.seleniumwebdriverjava.test.ControleDeProdutosTest" time="15.667" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
     <property name="file.encoding.pkg" value="sun.io"/>
     <property name="java.specification.version" value="1.8"/>
-    <property name="webdriver.chrome.driver" value="src/test/java/br/com/seleniumwebdriverjava/resource/chromedriver.exe"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
     <property name="java.class.path" value="C:\Users\Vanderson\Documents\Projetos JAVA\automatizandoEmJavaWR\automatizado\target\test-classes;C:\Users\Vanderson\Documents\Projetos JAVA\automatizandoEmJavaWR\automatizado\target\classes;C:\Users\Vanderson\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Vanderson\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Vanderson\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\3.141.59\selenium-chrome-driver-3.141.59.jar;C:\Users\Vanderson\.m2\repository\org\seleniumhq\selenium\selenium-api\3.141.59\selenium-api-3.141.59.jar;C:\Users\Vanderson\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\3.141.59\selenium-remote-driver-3.141.59.jar;C:\Users\Vanderson\.m2\repository\net\bytebuddy\byte-buddy\1.8.15\byte-buddy-1.8.15.jar;C:\Users\Vanderson\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\Vanderson\.m2\repository\com\google\guava\guava\25.0-jre\guava-25.0-jre.jar;C:\Users\Vanderson\.m2\repository\com\google\code\findbugs\jsr305\1.3.9\jsr305-1.3.9.jar;C:\Users\Vanderson\.m2\repository\org\checkerframework\checker-compat-qual\2.0.0\checker-compat-qual-2.0.0.jar;C:\Users\Vanderson\.m2\repository\com\google\errorprone\error_prone_annotations\2.1.3\error_prone_annotations-2.1.3.jar;C:\Users\Vanderson\.m2\repository\com\google\j2objc\j2objc-annotations\1.1\j2objc-annotations-1.1.jar;C:\Users\Vanderson\.m2\repository\org\codehaus\mojo\animal-sniffer-annotations\1.14\animal-sniffer-annotations-1.14.jar;C:\Users\Vanderson\.m2\repository\com\squareup\okhttp3\okhttp\3.11.0\okhttp-3.11.0.jar;C:\Users\Vanderson\.m2\repository\com\squareup\okio\okio\1.14.0\okio-1.14.0.jar;C:\Users\Vanderson\.m2\repository\org\seleniumhq\selenium\selenium-support\3.141.59\selenium-support-3.141.59.jar;"/>
@@ -62,15 +61,15 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="TC001_deveSerPossivelPesquisarNoGoogleOTextoBatataFrita" classname="br.com.seleniumwebdriverjava.test.GoogleTest" time="5.764">
-    <system-err><![CDATA[Starting ChromeDriver 117.0.5938.62 (25a7172909a4cba7355365cf424d7d7eb35231f4-refs/branch-heads/5938@{#1146}) on port 16164
+  <testcase name="TC001_deveAbrirModalParaCadastroAoClicarNoBotaoCriar" classname="br.com.seleniumwebdriverjava.test.ControleDeProdutosTest" time="0.766">
+    <system-err><![CDATA[Starting ChromeDriver 117.0.5938.62 (25a7172909a4cba7355365cf424d7d7eb35231f4-refs/branch-heads/5938@{#1146}) on port 45131
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1698571804.519][WARNING]: This version of ChromeDriver has not been tested with Chrome version 118.
-out 29, 2023 6:30:04 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+[1698571789.822][WARNING]: This version of ChromeDriver has not been tested with Chrome version 118.
+out 29, 2023 6:29:50 AM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFORMAÇÕES: Detected dialect: W3C
 ]]></system-err>
   </testcase>
-  <testcase name="TC001_deveSerPossivelPesquisarNoGoogleOTextoNutella" classname="br.com.seleniumwebdriverjava.test.GoogleTest" time="4.719"/>
+  <testcase name="TC003_naoDeveSerPossivelCadastrarUmProdutoSemPreencherTodosOsCampos" classname="br.com.seleniumwebdriverjava.test.ControleDeProdutosTest" time="8.662"/>
 </testsuite>

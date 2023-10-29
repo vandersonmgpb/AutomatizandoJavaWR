@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import br.com.seleniumwebdriverjava.builder.ProdutoBuilder;
+
 public class ControleDeProdutoPO extends BasePO{
 
     @FindBy (id = "btn-adicionar")
@@ -57,7 +59,11 @@ public class ControleDeProdutoPO extends BasePO{
             escrever(inputData, data);
 
             buttonSalvar.click();
+    }
 
+    public void cadastrarProduto(ProdutoBuilder produtoBuilder){
+        
+        produtoBuilder.builder();
     }
 
     

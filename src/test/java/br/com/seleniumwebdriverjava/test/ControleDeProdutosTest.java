@@ -7,6 +7,7 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
+import br.com.seleniumwebdriverjava.builder.ProdutoBuilder;
 import br.com.seleniumwebdriverjava.pages.ControleDeProdutoPO;
 import br.com.seleniumwebdriverjava.pages.LoginPO;
 
@@ -43,18 +44,72 @@ public class ControleDeProdutosTest extends BaseTest{
 
     }
     
+    // @Test
+    // public void TC002_naoDeveSerPossivelCadastrarUmProdutoSemPreencherTodosOsCampos(){
+        
+    //     controlleProdutoPage.buttonAdicionar.click();
+    //     controlleProdutoPage.buttonAdicionar.click();
+
+    //     controlleProdutoPage.cadastrarProduto("00001", "Martelo", 10, 59.9, "");
+
+        
+    //     // Aqui vamos capturar a mensagem de erro.
+    //     String mensagem = controlleProdutoPage.spanMensagem.getText();
+        
+    //     assertEquals("Todos os campos são obrigatórios para o cadastro!", mensagem);
+    // }
+
     @Test
-    public void TC002_naoDeveSerPossivelCadastrarUmProdutoSemPreencherTodosOsCampos(){
+    public void TC003_naoDeveSerPossivelCadastrarUmProdutoSemPreencherTodosOsCampos(){
         
+        String mensagem = "Todos os campos são obrigatórios para o cadastro!";
         controlleProdutoPage.buttonAdicionar.click();
-        controlleProdutoPage.buttonAdicionar.click();
+        // controlleProdutoPage.buttonAdicionar.click();
 
-        controlleProdutoPage.cadastrarProduto("00001", "Martelo", 10, 59.9, "");
+        // Aqui cria o objeto para adicionar na tela
+        ProdutoBuilder produtoBuilder = new ProdutoBuilder(controlleProdutoPage);
 
+        // Aqui estamos testando se o produto é adicionado sem código
+        produtoBuilder
+        .adicionarCodigo("")
+        .builder();
+
+        assertEquals(mensagem, controlleProdutoPage.spanMensagem.getText());
         
-        // Aqui vamos capturar a mensagem de erro.
-        String mensagem = controlleProdutoPage.spanMensagem.getText();
+        // Aqui estamos testando se o produto é adicionado sem quantidade
+        produtoBuilder
+        .adicionarCodigo("00005")
+        .adicionarQuantidade(null)
+        .adicionarValor(50.40)
+        .builder();
         
-        assertEquals("Todos os campos são obrigatórios para o cadastro!", mensagem);
+        assertEquals(mensagem, controlleProdutoPage.spanMensagem.getText());
+
+        // Aqui estamos testando se o produto é adicionado sem nome
+        produtoBuilder
+        .adicionarQuantidade(5)
+        .adicionarNome("")
+        .builder();
+
+        assertEquals( mensagem, controlleProdutoPage.spanMensagem.getText());
+        
+        // Aqui estamos testando se o produto é adicionado sem valor
+        produtoBuilder
+        .adicionarNome("Cimento")
+        .adicionarValor(null)
+        .builder();
+       
+        assertEquals( mensagem, controlleProdutoPage.spanMensagem.getText());
+
+        // Aqui estamos testando se o produto é adicionado sem data
+        produtoBuilder
+        .adicionarValor(50.0)
+        .adicionarData("")
+        .builder();
+        
+        assertEquals( mensagem, controlleProdutoPage.spanMensagem.getText());
+
+        controlleProdutoPage.buttonSair.click();
+        // controlleProdutoPage.buttonSair.click();
     }
 }
